@@ -18,6 +18,7 @@
     <div class="row">
       {{ range (.Paginator 4).Pages }}
       <div class="col-lg-6">
+        <a href="{{ .Permalink }}">
         <article class="site-blog-post">
           {{ with .Params.image }}
           <div class="site-blog-post-thumb">
@@ -26,13 +27,13 @@
           {{ end }}
           <div class="site-blog-post-content">
             <span>{{ .PublishDate.Format "January 2, 2006" }}</span>
-            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <h3>{{ .Title }}</a></h3>
             <p>
               {{ .Summary }} ...
             </p>
             <a href="{{ .Permalink }}" class="read-more">read more</a>
           </div>
-        </article>
+        </article></a>
       </div>
       {{ end }}
       <div class="col-12">
